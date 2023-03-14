@@ -16,6 +16,15 @@ You should submit the following files as part of your solution:
 A C program that implements the tweet validation logic described above.
 A README file that provides instructions on how to compile and run the program.
 
+## Usage
+To use the program, simply compile it and run it on your terminal. The program prompts you to input the tweet you want to validate.
+```
+$ gcc -o tweet tweet.c
+$ ./tweet
+Enter your tweet: 
+```
+If the tweet meets all the requirements, the program outputs "Valid tweet." Otherwise, it outputs "Invalid tweet."
+
 ## Additional Notes
 You can assume that the tweet is entered by the user as a single line of text.
 You can assume that the tweet contains only ASCII characters.
