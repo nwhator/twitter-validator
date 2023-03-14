@@ -38,14 +38,14 @@ int main(void)
 
 bool valid_tweet(char tweet[])
 {
-	int i;
+	int i, len = strlen(tweet);
 	char c;
 
-	if (strlen(tweet) > MAX_LEN)
+	if (len > MAX_LEN)
 	{
 		return (false);
 	}
-	for (i = 0; i < strlen(tweet); i++)
+	for (i = 0; i < len; i++)
 	{
 		c = tweet[i];
 		if (c == '@' || c == '\n')
@@ -54,25 +54,25 @@ bool valid_tweet(char tweet[])
 			printf("Contains @ mention\n");
 			return (false);
 		}
-		if (c == 'h' && i < strlen(tweet) - 3 && strncmp(tweet + i, "http", 4) == 0)
+		if (c == 'h' && i < len - 3 && strncmp(tweet + i, "http", 4) == 0)
 		{
 			/* Check URL */
 			printf("Contains link\n");
 			return (false);
 		}
-		if (i < strlen(tweet) - 3 && strncmp(tweet + i, "www", 3) == 0)
+		if (i < len - 3 && strncmp(tweet + i, "www", 3) == 0)
 		{
 			/* Check www */
 			printf("Contains lin\nk");
 			return (false);
 		}
-		if (i < strlen(tweet) - 4 && strncmp(tweet + i, ".com", 4) == 0)
+		if (i < len - 4 && strncmp(tweet + i, ".com", 4) == 0)
 		{
 			/* Check .com */
 			printf("Contains link\n");
 			return (false);
 		}
-		if (i < strlen(tweet) - 1 && c == ':' && tweet[i + 1] == '/')
+		if (i < len - 1 && c == ':' && tweet[i + 1] == '/')
 		{
 			/* Check for other types of URL using / */
 			return (false);
