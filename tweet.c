@@ -14,7 +14,7 @@ int main(void)
 {
 	char tweet[MAX_LEN + 1];
 
-	printf("Enter you tweet: ");
+	printf("Enter your tweet: ");
 	scanf("%280[^\n]", tweet);
 
 	if (valid_tweet(tweet))
